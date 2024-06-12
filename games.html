@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CompTIA A+ Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>CompTIA A+ Certification Quiz</h1>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container" id="quiz-container">
+        <section id="quiz-section">
+            <div id="question-container">
+                <div id="question">Question text</div>
+                <div class="options">
+                    <button class="option" onclick="selectAnswer('a')"></button>
+                    <button class="option" onclick="selectAnswer('b')"></button>
+                    <button class="option" onclick="selectAnswer('c')"></button>
+                    <button class="option" onclick="selectAnswer('d')"></button>
+                </div>
+                <button id="next-btn" onclick="nextQuestion()">Next</button>
+                <button id="show-answers-btn" onclick="showCorrectAnswers()">Show Correct Answers</button>
+            </div>
+            <div id="score">Score: 0</div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 CompTIA A+ Quiz. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

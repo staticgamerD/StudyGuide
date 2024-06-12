@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 300px;
+        }
+
+        .grid-item {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            background-color: lightgray;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        #start-btn, #submit-btn {
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+    <link rel="stylesheet" href="style.css">
+<body>
+<nav>
+    <div class="container" id="grid-container">
+        <div class="grid-item" onclick="selectBox(0)"></div>
+        <div class="grid-item" onclick="selectBox(1)"></div>
+        <div class="grid-item" onclick="selectBox(2)"></div>
+        <div class="grid-item" onclick="selectBox(3)"></div>
+        <div class="grid-item" onclick="selectBox(4)"></div>
+        <div class="grid-item" onclick="selectBox(5)"></div>
+        <div class="grid-item" onclick="selectBox(6)"></div>
+        <div class="grid-item" onclick="selectBox(7)"></div>
+        <div class="grid-item" onclick="selectBox(8)"></div>
+        <div class="grid-item" onclick="selectBox(9)"></div>
+    </div>
+	    </nav>
+    <button id="start-btn" onclick="startGame()">Start</button>
+    <button id="submit-btn" onclick="checkSequence()" style="display: none;">Submit</button>
+
+    <script>
+        var sequence = [];
+        var selectedBoxes = [];
+        var started = false;
+
+        function startGame() {
+            // Generate a random sequence of numbers (0-8)
+            sequence = [];
+            for (var i = 0; i < 3; i++) {
+                sequence.push(Math.floor(Math.random() * 9));
+            }
+
+            // Show the sequence by changing box colors
+            showSequence();
+
+            // Change the button text and functionality
+            document.getElementById("start-btn").style.display = "none";
+            document.getElementById("submit-btn").style.display = "inline-block";
+            started = true;
+        }
+
+        function showSequence() {
+            for (var i = 0; i < sequence.length; i++) {
+                setTimeout(function(index) {
+                    document.getElementsByClassName("grid-item")[sequence[index]].style.backgroundColor = "blue";
+                    setTimeout(function() {
+                        document.getElementsByClassName("grid-item")[sequence[index]].style.backgroundColor = "lightgray";
+                    }, 1000);
+                }, i * 1500, i);
+            }
+        }
+
+        function selectBox(index) {
+            if (!started) return;
+            selectedBoxes.push(index);
+            document.getElementsByClassName("grid-item")[index].innerText = selectedBoxes.length;
+        }
+
+        function checkSequence() {
+            if (selectedBoxes.length !== sequence.length) {
+                alert("Please select all boxes in the sequence.");
+                return;
+            }
+
+            for (var i = 0; i < sequence.length; i++) {
+                if (selectedBoxes[i] !== sequence[i]) {
+                    alert("Incorrect sequence. Please try again.");
+                    return;
+                }
+            }
+
+            alert("Congratulations! You completed the sequence.");
+            // Reset game
+            resetGame();
+        }
+
+        function resetGame() {
+            sequence = [];
+            selectedBoxes = [];
+            started = false;
+            document.getElementById("start-btn").style.display = "inline-block";
+            document.getElementById("submit-btn").style.display = "none";
+
+            var gridItems = document.getElementsByClassName("grid-item");
+            for (var i = 0; i < gridItems.length; i++) {
+                gridItems[i].innerText = "";
+            }
+        }
+    </script>
+</body>
+</html>

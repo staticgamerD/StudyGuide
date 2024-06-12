@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #0044cc;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #002a80;
+}
+
+nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: #001f5c;
+}
+
+.container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #0044cc;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* New styles for image enlargement on hover */
+.zoom-image {
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 400px;
+}
+
+.zoom-image:hover {
+    transform: scale(1.2);
+}
+
+/* Grid styles */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.grid-item {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 1px solid black;
+    transition: background-color 0.3s;
+}
+
+.grid-item:hover {
+    background-color: blue;
+}
+
+/* Math game styles */
+#problem {
+    font-size: 24
