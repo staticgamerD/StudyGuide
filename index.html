@@ -3,52 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GrimGobletStudios</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Security+ Practice Test</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>GrimGobletStudios</h1>
-        <p>An indie game company founded by StaticGamerG</p>
+    <header class="banner">
+        <h1>Security+ Practice Test</h1>
     </header>
-    <nav>
-        <a href="#index.html">Home</a>
-        <a href="games.html">Games</a>
-        <a href="#books.html">Books</a>
-        <a href="#art.html">Art</a>
-        <a href="#about.html">About</a>
-        <a href="#contact.html">Contact</a>
-    </nav>
     <div class="container">
-        <section id="about">
-            <h2>About Us</h2>
-            <p>GrimGobletStudios is an indie game company founded by StaticGamerG. We are dedicated to creating unique and engaging gaming experiences. Stay tuned for our upcoming projects!</p>
-        </section>
-        <section id="games">
-            <h2>Our Games</h2>
-            <p>We are currently working on exciting new projects. Please check back later for updates on our games.</p>
-        </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or would like to get in touch, please email us at <a href="mailto:contact@grimgobletstudios.com">contact@grimgobletstudios.com</a>.</p>
-        </section>
-        <!-- Grid of boxes -->
-        <section id="grid">
-            <div class="grid-container">
-                <div class="grid-item" onclick="window.location.href='games.html'">A</div>
-                <div class="grid-item" onclick="window.location.href='games.html'">B</div>
-                <div class="grid-item" onclick="window.location.href='games.html'">C</div>
-                <div class="grid-item" onclick="window.location.href='games.html'">D</div>
-                <div class="grid-item" onclick="window.location.href='games.html'">E</div>
-                <div class="grid-item" onclick="window.location.href='games.html'">F</div>
-                <div class="grid-item" onclick="window.location.href='games.html'">G</div>
-                <div class="grid-item" onclick="window.location.href='games.html'">H</div>
-                <div class="grid-item" onclick="window.location.href='games.html'">I</div>
-            </div>
-        </section>
+        <div id="timer">90:00</div>
+        <div id="question">Question will appear here</div>
+        <div id="options"></div>
+        <div id="feedback"></div>
+        <button id="nextButton" class="action-button">Next</button>
+        <button id="finishButton" class="action-button">Finish Test</button>
     </div>
-    <footer>
-        <p>&copy; 2024 GrimGobletStudios. All rights reserved.</p>
-    </footer>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,144 +1,110 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f4f8;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #0044cc;
+/* Banner styling */
+.banner {
+    background-color: #007bff;
     color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    background-color: #002a80;
-}
-
-nav a {
-    color: white;
-    padding: 14px 20px;
-    text-decoration: none;
-    text-align: center;
-}
-
-nav a:hover {
-    background-color: #001f5c;
-}
-
-.container {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-section {
-    margin-bottom: 20px;
-}
-
-footer {
-    background-color: #0044cc;
-    color: white;
-    text-align: center;
     padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-#quiz-container {
     text-align: center;
+    font-size: 24px; /* Increased font size */
+    font-weight: bold; /* Make text bold */
+    position: relative; /* Ensure header is positioned relative for absolute positioning of timer */
 }
 
-#question-container {
-    margin-bottom: 20px;
+/* Timer styling */
+#timer {
+    position: absolute;
+    top: 100%; /* Position directly below the banner */
+    right: 10px; /* Align to the right edge with some margin */
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 18px; /* Increased font size */
+    font-weight: bold; /* Make text bold */
 }
 
-.options {
-    margin: 20px 0;
+/* Container for all content below the banner */
+.container {
+    margin: 1in; /* Apply 1 inch margin on all sides */
 }
 
-.option {
+/* Question styling */
+#question {
+    font-size: 36px; /* Increased font size */
+    margin: 60px 0 40px 0; /* Increased bottom margin to create more space below the question */
+    font-weight: bold; /* Make text bold */
+}
+
+/* Options container styling */
+#options {
+    margin-top: 40px; /* Adjusted top margin to lower the options on the page */
+}
+
+/* Hide radio buttons but keep labels visible */
+#options input[type="radio"] {
+    display: none; /* Hide the radio button */
+}
+
+#options label {
+    display: block; /* Ensure labels are block elements for easier layout */
+    padding: 10px; /* Add padding for better spacing inside each label */
+    padding-right: 20px; /* Add space to the right inside the border */
+    border: 2px solid #ccc; /* Border around the labels */
+    border-radius: 5px; /* Rounded corners for labels */
+    margin-bottom: 4px; /* Decreased space between options */
+    cursor: pointer; /* Pointer cursor to indicate clickable items */
+    font-size: 18px; /* Increased font size */
+    font-weight: bold; /* Make text bold */
+}
+
+/* Highlight selected option */
+#options label.selected {
+    border-color: #007bff; /* Highlight border color when selected */
+    background-color: #e7f0ff; /* Background color when selected */
+}
+
+/* Button styling */
+button {
     display: block;
     width: 100%;
     padding: 10px;
-    margin: 5px 0;
-    font-size: 16px;
-}
-
-.option.correct {
-    background-color: #4caf50;
+    background-color: #007bff;
+    border: none;
     color: white;
-}
-
-.option.incorrect {
-    background-color: #f44336;
-    color: white;
-}
-
-#next-btn, #show-answers-btn {
-    display: none;
-    padding: 10px 20px;
-    font-size: 16px;
-}
-
-#score {
-    margin-top: 20px;
-    font-size: 20px;
-}
-
-/* New styles for image enlargement on hover */
-.zoom-image {
-    transition: transform 0.3s ease;
-    width: 100%;
-    max-width: 400px;
-}
-
-.zoom-image:hover {
-    transform: scale(1.2);
-}
-
-/* Grid styles */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-}
-
-.grid-item {
-    width: 100px;
-    height: 100px;
-    background-color: white;
-    border: 1px solid black;
-    transition: background-color 0.3s;
-}
-
-.grid-item:hover {
-    background-color: blue;
-}
-
-/* Math game styles */
-#problem {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.choices {
-    margin-top: 10px;
-}
-
-.choice {
-    display: inline-block;
-    margin-right: 10px;
-    padding: 5px 10px;
-    background-color: #f0f0f0;
+    font-size: 18px; /* Increased font size */
+    border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 10px; /* Ensure space between buttons */
+    font-weight: bold; /* Make text bold */
 }
 
-.choice:hover {
-    background-color: #e0e0e0;
+button:hover {
+    background-color: #0056b3;
+}
+
+#finishButton {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: auto;
+    padding: 10px 20px;
+    font-size: 18px; /* Increased font size */
+    font-weight: bold; /* Make text bold */
+}
+
+.correct {
+    color: green;
+    font-size: 18px; /* Increased font size */
+    font-weight: bold; /* Make text bold */
+}
+
+.wrong {
+    color: red;
+    font-size: 18px; /* Increased font size */
+    font-weight: bold; /* Make text bold */
+}
+
+#feedback {
+    margin-top: 10px;
+    font-size: 18px; /* Increased font size */
+    font-weight: bold; /* Make text bold */
 }
