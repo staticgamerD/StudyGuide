@@ -5,18 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Security+ Practice Test</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        #quizSelector {
+            margin-bottom: 60px;
+        }
+        #quizContainer {
+            display: none; /* Initially hide quiz container */
+        }
+    </style>
 </head>
 <body>
     <header class="banner">
         <h1>Security+ Practice Test</h1>
     </header>
     <div class="container">
-        <div id="timer">90:00</div>
-        <div id="question">Question will appear here</div>
-        <div id="options"></div>
-        <div id="feedback"></div>
-        <button id="nextButton" class="action-button">Next</button>
-        <button id="finishButton" class="action-button">Finish Test</button>
+        <div id="quizSelector">
+            <label for="quizSelect">Select a Quiz:</label>
+            <select id="quizSelect">
+                <option value="">--Select a Quiz--</option>
+                <option value="quiz1">Quiz 1</option>
+                <option value="quiz2">Quiz 2</option>
+				<option value="quiz3">Quiz 3</option>
+				<option value="quiz4">Quiz 4</option>
+            </select>
+        </div>
+        <div id="quizContainer">
+            <div id="timer">90:00</div>
+            <div id="question">Question will appear here</div>
+            <div id="options"></div>
+            <div id="feedback"></div>
+            <button id="nextButton" class="action-button">Next</button>
+            <button id="finishButton" class="action-button">Finish Test</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
