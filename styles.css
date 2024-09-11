@@ -11,9 +11,9 @@
 
 /* Timer styling */
 #timer {
-    position: absolute;
-    top: 100%; /* Position directly below the banner */
-    right: 10px; /* Align to the right edge with some margin */
+    position: fixed; /* Change from absolute to fixed */
+    bottom: 70px; /* Distance from the bottom of the viewport */
+    right: 10px; /* Distance from the right of the viewport */
     background-color: black;
     color: white;
     padding: 5px 10px;
@@ -81,14 +81,24 @@ button:hover {
     background-color: #0056b3;
 }
 
+/* Finish button styling */
 #finishButton {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
+    position: fixed; /* Change from absolute to fixed */
+    bottom: 10px; /* Distance from the bottom of the viewport */
+    right: 10px; /* Distance from the right of the viewport */
     width: auto;
     padding: 10px 20px;
     font-size: 18px; /* Increased font size */
     font-weight: bold; /* Make text bold */
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#finishButton:hover {
+    background-color: #0056b3;
 }
 
 .correct {

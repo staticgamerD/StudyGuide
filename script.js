@@ -473,7 +473,7 @@ const quizzes = {
 	};
 
 // Constants
-const TIME_LIMIT = 90 * 60 * 1000; // 90 minutes in milliseconds
+const TIME_LIMIT = 60 * 60 * 1000; // 60 minutes in milliseconds
 
 // Variables
 let startTime = Date.now();
